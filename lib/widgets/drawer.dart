@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DrawerWidget extends StatefulWidget {
   const DrawerWidget({super.key});
@@ -25,16 +27,17 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 78, 114, 70),
+          DrawerHeader(
+            decoration: const BoxDecoration(
+              color: Color(0xFF4E7246),
             ),
             child: Text(
               'Drawer Header',
-              style: TextStyle(
+              style: GoogleFonts.lato(
                 color: Colors.white,
                 fontSize: 24,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w700,
+                fontStyle: FontStyle.italic,
               ),
             ),
           ),
@@ -44,15 +47,21 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               children: [
                 _buildListTile(
                   context,
-                  icon: Icons.home,
+                  icon: FontAwesomeIcons.house,
                   title: 'Home',
                   routeName: '/',
                 ),
                 _buildListTile(
                   context,
-                  icon: Icons.settings,
+                  icon: FontAwesomeIcons.gear,
                   title: 'Settings',
-                  routeName: '/settings',
+                  routeName: 'settings',
+                ),
+                _buildListTile(
+                  context,
+                  icon: FontAwesomeIcons.book,
+                  title: 'Sqflite',
+                  routeName: 'sqflite',
                 ),
               ],
             ),

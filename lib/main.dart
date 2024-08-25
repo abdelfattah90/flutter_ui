@@ -14,8 +14,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
-        ChangeNotifierProvider(
-            create: (_) => LanguageProvider()..fetchLocale()),
+        ChangeNotifierProvider(create: (_) => LanguageProvider()),
       ],
       child: MyApp(
         initialLocale: langCode != null ? Locale(langCode) : const Locale('ar'),

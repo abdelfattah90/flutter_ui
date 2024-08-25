@@ -24,6 +24,7 @@ class _SettingsState extends State<Settings> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // Theme Selection Dropdown
           DropdownButton<String>(
             value: themeProvider.themeName,
             onChanged: (String? newTheme) {
@@ -40,6 +41,7 @@ class _SettingsState extends State<Settings> {
             }).toList(),
           ),
           const Divider(),
+          // Language Selection Dropdown
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: DropdownButtonFormField<String>(
@@ -51,7 +53,8 @@ class _SettingsState extends State<Settings> {
                 } else if (newValue == 'ar') {
                   provider.changeLanguage(const Locale('ar'));
                 }
-                Navigator.pop(context);
+                // Optionally, you can force a rebuild, but it's usually not necessary
+                // setState(() {});
               },
               items: const <DropdownMenuItem<String>>[
                 DropdownMenuItem(
